@@ -1,0 +1,90 @@
+body {
+  width: 280px; /* Slightly wider for better spacing */
+  font-family: 'Inter', 'Roboto', sans-serif; /* Modern sans-serif fonts */
+  background-color: #f8f9fa; /* Light gray background */
+  margin: 0;
+  padding: 20px; /* Increased padding */
+  color: #343a40; /* Darker text color */
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px; /* Increased margin */
+}
+h1 {
+  font-size: 20px; /* Slightly larger heading */
+  color: #212529; /* Even darker heading color */
+  margin: 0;
+  font-weight: 600; /* Bolder heading */
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px; /* Wider switch */
+  height: 28px; /* Taller switch */
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ced4da; /* Lighter gray for inactive slider */
+  transition: 0.4s;
+  border-radius: 28px; /* Fully rounded */
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px; /* Larger circle */
+  width: 20px; /* Larger circle */
+  left: 4px; /* Adjusted position */
+  bottom: 4px; /* Adjusted position */
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+input:checked + .slider {
+  background-color: #007bff; /* Primary blue for active state */
+}
+input:checked + .slider:before {
+  transform: translateX(22px); /* Adjusted transform */
+}
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#toggle-inspector-btn {
+  background-color: #e9ecef; /* Light gray button */
+  border: 1px solid #ced4da; /* Border color */
+  border-radius: 5px; /* Slightly more rounded */
+  padding: 8px 12px; /* Increased padding */
+  cursor: pointer;
+  font-size: 14px; /* Slightly larger font */
+  color: #495057; /* Darker text color */
+  transition: all 0.2s ease-in-out; /* Smooth transition */
+}
+#toggle-inspector-btn:hover {
+  background-color: #dee2e6; /* Darker hover state */
+}
+#toggle-inspector-btn.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.description-text {
+  font-size: 14px;
+  color: #6c757d; /* Muted text color */
+  line-height: 1.5;
+}
+

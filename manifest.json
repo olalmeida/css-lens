@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "CSS Lens",
+  "version": "1.1.0",
+  "description": "A browser extension that allows users to inspect and modify CSS styles on any webpage in real-time.",
+  "author": "CSS Lens Team",
+  "homepage_url": "https://github.com/olalmeida/css-lens",
+  "permissions": ["activeTab", "storage", "commands"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L"
+      }
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/utils/Sanitizer.js", "src/utils/DOMUtils.js", "src/services/PremiumService.js", "src/services/AdService.js", "content.js"],
+      "css": ["styles/content.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CSS Lens",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

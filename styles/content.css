@@ -1,0 +1,157 @@
+#css-lens-overlay * {
+    box-sizing: border-box;
+}
+
+#css-lens-overlay.flex-container .css-lens-header::after {
+    content: " (Flexbox Container)";
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+#css-lens-overlay.grid-container .css-lens-header::after {
+    content: " (Grid Container)";
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+#css-lens-overlay {
+    position: fixed;
+    background: #1e293b;
+    border: 2px solid #2563eb;
+    border-radius: 8px;
+    padding: 16px;
+    color: white;
+    font-family: 'Consolas', monospace;
+    font-size: 14px;
+    z-index: 1000000;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    display: none;
+}
+
+/* Estilos para el Box Model */
+.css-box-model {
+    margin-top: 10px;
+    border: 1px solid #4a5568;
+    padding: 5px;
+    background-color: #2d3748;
+    text-align: center;
+    overflow: hidden; /* Add this */
+}
+.box-margin, .box-border, .box-padding, .box-content {
+    border: 1px dashed rgba(255,255,255,0.3);
+    margin: 2px;
+    position: relative;
+    max-width: 100%; /* Add this */
+}
+.box-margin { border-color: #f6ad55; } /* Naranja */
+.box-border { border-color: #4299e1; } /* Azul */
+.box-padding { border-color: #48bb78; } /* Verde */
+.box-content { background-color: #38b2ac; min-height: 20px; display: flex; align-items: center; justify-content: center; } /* Teal */
+.box-labels {
+    font-size: 10px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.label-margin { color: #f6ad55; }
+.label-border { color: #4299e1; }
+.label-padding { color: #48bb78; }
+
+/* Estilos para los campos de edición */
+.editable-css-property {
+    background-color: #3e4c5a;
+    border: 1px solid #4a5568;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    width: 100px; /* Ancho fijo para los inputs */
+}
+.css-lens-controls {
+    margin-top: 15px;
+    text-align: center;
+}
+.css-lens-controls button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 0 5px; /* Espacio entre botones */
+}
+.css-lens-controls button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Estilos para las categorías de propiedades */
+.css-properties-container {
+    margin-top: 15px;
+}
+.css-category {
+    border-bottom: 1px solid #4a5568;
+}
+.css-category:last-child {
+    border-bottom: none;
+}
+.css-category-title {
+    cursor: pointer;
+    padding: 8px 0;
+    font-weight: bold;
+    color: #94a3b8;
+    list-style: none; /* Ocultar el marcador por defecto */
+}
+.css-category-title::-webkit-details-marker {
+    display: none; /* Ocultar el marcador en Chrome/Safari */
+}
+.css-category-title::before {
+    content: '▶'; /* Marcador personalizado */
+    margin-right: 8px;
+    font-size: 10px;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+.css-category[open] > .css-category-title::before {
+    transform: rotate(90deg);
+}
+.css-properties-list {
+    max-height: 150px; /* Altura máxima antes de activar el scroll */
+    overflow-y: auto; /* Scroll vertical */
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+.css-property {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+.prop {
+    color: #a0aec0;
+}
+.value {
+    color: #cbd5e0;
+}
+
+/* Estilos para el banner de anuncios */
+#css-lens-ad-banner {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #2d3748;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 12px;
+}
+#css-lens-ad-banner p {
+    margin: 0;
+    color: #cbd5e0;
+}
+#css-lens-ad-banner button {
+    background: none;
+    border: none;
+    color: #a0aec0;
+    cursor: pointer;
+    font-size: 10px;
+    margin-top: 5px;
+}
